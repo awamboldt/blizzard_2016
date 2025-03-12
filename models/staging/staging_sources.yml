@@ -1,8 +1,14 @@
 version: 2
 sources:
 
-- name: weather_data
+- name: our_data
   schema: dark_clouds
   tables:
     - name: flights_our_airports
     - name: weather_hourly_raw
+
+- name: flights_data
+  schema: public
+  tables:
+    - name: flights
+    - name: airports
