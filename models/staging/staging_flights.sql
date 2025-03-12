@@ -1,2 +1,2 @@
 SELECT * 
-FROM {{source('flights_data', 'flights_our_airports')}}
+FROM {{source('flights_our_airports')}}
