@@ -25,7 +25,7 @@ hourly_data_1 AS (
 ),
 hourly_cleaned_data AS 
     (SELECT * 
-    FROM hourly_data_1,
+    FROM hourly_data_1),
 hourly_data AS (
     SELECT * 
     FROM hourly_cleaned_data
