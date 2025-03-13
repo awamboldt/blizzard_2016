@@ -7,7 +7,7 @@ WITH merged_snow AS
     LEFT JOIN {{ref('staging_weather_daily')}} AS d ON (h.date=d.date AND d.airport_code = h.airport_code)
     GROUP BY faa, d.date, h.time
     ORDER BY d.date, h.time)
-SELECT s.*
+SELECT s.snow
     , w.*
 FROM merged_snow AS s
 LEFT JOIN {{ref('staging_weather_hourly')}} AS w ON (s.date = w.date AND s.time = w.time AND s.faa = w.airport_code)
