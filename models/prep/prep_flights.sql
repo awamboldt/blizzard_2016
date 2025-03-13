@@ -6,12 +6,12 @@ flights_cleaned AS(
     SELECT flight_date::DATE
             , TO_CHAR(f.dep_time, 'fm0000')::TIME AS dep_time
             , TO_CHAR(f.sched_dep_time, 'fm0000')::TIME AS sched_dep_time
-            , EXTRACT(HOUR FROM (f.dep_time))::INTEGER AS dep_hour  
+            , EXTRACT(HOUR FROM (TO_CHAR(f.dep_time, 'fm0000')::TIME))::INTEGER AS dep_hour  
             ,f.dep_delay
 		    ,(f.dep_delay * '1 minute'::INTERVAL) AS dep_delay_interval
             ,TO_CHAR(f.arr_time, 'fm0000')::TIME AS arr_time
             ,TO_CHAR(f.sched_arr_time, 'fm0000')::TIME AS sched_arr_time
-            , EXTRACT(HOUR FROM (f.arr_time))::INTEGER AS arr_hour  
+            , EXTRACT(HOUR FROM (TO_CHAR(f.arr_time, 'fm0000')::TIME))::INTEGER AS arr_hour  
             ,f.arr_delay
             ,(f.arr_delay * '1 minute'::INTERVAL) AS arr_delay_interval
             ,f.airline
