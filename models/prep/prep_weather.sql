@@ -1,4 +1,5 @@
-WTIH merged_snow AS (SELECT d.airport_code
+WITH merged_snow AS 
+    (SELECT d.airport_code
     , d.date
     , h.time
     , AVG(d.max_snow_mm) AS snow
