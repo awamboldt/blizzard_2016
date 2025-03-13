@@ -52,6 +52,6 @@ SELECT
 		WHEN condition_code = 25 THEN 'thunderstorm'
 		WHEN condition_code = 26 THEN 'heavy_thunderstorm'
 		WHEN condition_code = 27 THEN 'storm'
-		ELSE 'data_missing'
+		ELSE '--'
 	END) AS condition	
 FROM added_snow
