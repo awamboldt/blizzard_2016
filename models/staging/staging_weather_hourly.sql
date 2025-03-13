@@ -28,7 +28,7 @@ hourly_cleaned_data AS
     FROM hourly_raw),
 hourly_data AS (
     SELECT * 
-    FROM {{ref('staging_weather_hourly')}}
+    FROM hourly_cleaned_data
 ),
 add_features AS (
     SELECT *
