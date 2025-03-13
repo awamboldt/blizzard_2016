@@ -5,7 +5,7 @@ WITH hourly_raw AS (
             JSON_ARRAY_ELEMENTS(extracted_data -> 'data') AS json_data
     FROM {{source('our_data', 'weather_hourly_raw')}}
 ),
-hourly_data AS (
+hourly_data_1 AS (
     SELECT  
             airport_code
             ,station_id
@@ -25,7 +25,7 @@ hourly_data AS (
 ),
 hourly_cleaned_data AS 
     (SELECT * 
-    FROM hourly_raw),
+    FROM hourly_data_1,
 hourly_data AS (
     SELECT * 
     FROM hourly_cleaned_data
