@@ -6,6 +6,7 @@ sources:
   tables:
     - name: flights_our_airports
     - name: weather_hourly_raw
+    - name: weather_daily_raw
 
 - name: flights_data
   schema: public
