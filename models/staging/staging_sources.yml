@@ -10,5 +10,4 @@ sources:
 - name: flights_data
   schema: public
   tables:
-    - name: flights
     - name: airports
